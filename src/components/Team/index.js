@@ -13,11 +13,11 @@ import {
 
 export const Team = (props) => {
   const teamList = [
-    { id: 1, profileImg: 'ALC-WEBTEST/images/Team/Jessie Paulino.webp', name: 'Jessie', jobTitle: 'Art Director', locationURl: '#' },
-    { id: 2, profileImg: 'ALC-WEBTEST/images/Team/EddiePabon.webp', name: 'Eddie', jobTitle: 'Creator', locationURl: '#' },
-    { id: 3, profileImg: 'ALC-WEBTEST/images/Team/RichardGranata.png', name: 'Richard', jobTitle: 'Developer', locationURl: '#' },
-    { id: 4, profileImg: 'ALC-WEBTEST/images/Team/Jalissa Fulton.webp', name: 'Jalissa', jobTitle: 'Storyline Developer', year:'2021-2022', locationURl: '#' },
-    { id: 4, profileImg: 'ALC-WEBTEST/images/Team/Delroy Edwards.webp', name: 'Delroy', jobTitle: 'Storyline Art Design', year:'2021-2022', locationURl: '#' },
+    { id: 1, profileImg: 'images/Team/Jessie Paulino.webp', name: 'Jessie', jobTitle: 'Art Director', locationURl: '#' },
+    { id: 2, profileImg: 'images/Team/EddiePabon.webp', name: 'Eddie', jobTitle: 'Creator', locationURl: '#' },
+    { id: 3, profileImg: 'images/Team/RichardGranata.png', name: 'Richard', jobTitle: 'Developer', locationURl: '#' },
+    { id: 4, profileImg: 'images/Team/Jalissa Fulton.webp', name: 'Jalissa', jobTitle: 'Storyline Developer', year:'2021-2023', locationURl: '#' },
+    { id: 4, profileImg: 'images/Team/Delroy Edwards.webp', name: 'Delroy', jobTitle: 'Storyline Art Design', year:'2021-2022', locationURl: '#' },
   ]
   return (
     <TeamsLists bgimage={theme.images.teamListBack} id='about'>

@@ -30,7 +30,7 @@ export const Mission = (props) => {
           </p>
         </ALCtext>
         <LogoWrapper>
-          <img src="ALC-WEBTEST/images\LEAGUES3K\HeadLine_3543.png" alt="" />
+          <img src="images\LEAGUES3K\HeadLine_3543.png" alt="" />
         </LogoWrapper>
       </Content>
       <OverBack bgimage={width > 1024 && theme.images.welcomeShape} />

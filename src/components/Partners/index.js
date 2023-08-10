@@ -12,7 +12,7 @@ import { Container, LogoImg } from "./styles";
 const partnerList = [
   {
     id: 1,
-    photo: "ALC-WEBTEST/images/Partners/algo_pard.jpg",
+    photo: "images/Partners/algo_pard.jpg",
     href: "https://twitter.com/Algo_pard",
   },
   // { id: 2, photo: "images/Partners/AoA_3X.png" },
@@ -23,17 +23,17 @@ const partnerList = [
   // },
   {
     id: 4,
-    photo: "ALC-WEBTEST/images/Partners/algo-gem.png",
+    photo: "images/Partners/algo-gem.png",
     href: "https://twitter.com/AlgogemsNFT",
   },
   {
     id: 5,
-    photo: "ALC-WEBTEST/images/Partners/sock-hodler.png",
+    photo: "images/Partners/sock-hodler.png",
     href: "https://twitter.com/SockHodler",
   },
   {
     id: 6,
-    photo: "ALC-WEBTEST/images/Partners/nexus-asa.jpg",
+    photo: "images/Partners/nexus-asa.jpg",
     href: "https://twitter.com/AsaNexus",
   },
   // {
@@ -43,17 +43,17 @@ const partnerList = [
   // },
   {
     id: 8,
-    photo: "ALC-WEBTEST/images/Partners/algo-gaming.jpg",
+    photo: "images/Partners/algo-gaming.jpg",
     href: "https://twitter.com/AlgoGamingGuild",
   },
   {
     id: 9,
-    photo: "ALC-WEBTEST/images/Partners/akita-lnu.png",
+    photo: "images/Partners/akita-lnu.png",
     href: "https://twitter.com/AkitaInuASA",
   },
   {
     id: 10,
-    photo: "ALC-WEBTEST/images/Partners/aowls.png",
+    photo: "images/Partners/aowls.png",
     href: "https://twitter.com/AOWLs_HootGang",
   },
 ];

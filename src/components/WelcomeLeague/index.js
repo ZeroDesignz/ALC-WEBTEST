@@ -14,7 +14,7 @@ export const WelcomeLeague = () => {
       <Content bgimage={width < 480 ? theme.images.welcomeMobileBg : theme.images.welcomeShape}>
         <Headwrapper>
           <left>
-            <img src="ALC-WEBTEST/images/LEAGUES3K/Algolius_3543.png" alt="Algo Leagues NFT collection" />
+            <img src="images/LEAGUES3K/Algolius_3543.png" alt="Algo Leagues NFT collection" />
           </left>
           <middle>
             <h2>Unleash your inner</h2>
@@ -35,7 +35,7 @@ export const WelcomeLeague = () => {
             </villain>
           </middle>
           <right>
-            <img src="ALC-WEBTEST/images/LEAGUES3K/AOWL007_3543.png" alt="Algo Leagues NFT collection" />
+            <img src="images/LEAGUES3K/AOWL007_3543.png" alt="Algo Leagues NFT collection" />
           </right>
           {/* <h1>with Algo Leagues</h1> */}
           <bottom>

@@ -43,7 +43,7 @@ export const Nfts = (props) => {
           [...Array(10).keys()].map((index) => (
             <SwiperSlide key={index}>
               <NftItem>
-                <img src={`ALC-WEBTEST/images/NFT/Neap${index + 1}.gif`} alt='' />
+                <img src={`images/NFT/Neap${index + 1}.gif`} alt='' />
               </NftItem>
             </SwiperSlide>
           ))
@@ -52,7 +52,7 @@ export const Nfts = (props) => {
           [...Array(10).keys()].map((index) => (
             <SwiperSlide key={index}>
               <NftItem>
-                <img src={`ALC-WEBTEST/images/NFT/Legend${index + 1}.gif`} alt='' />
+                <img src={`images/NFT/Legend${index + 1}.gif`} alt='' />
               </NftItem>
             </SwiperSlide>
           ))
@@ -61,7 +61,7 @@ export const Nfts = (props) => {
           [...Array(10).keys()].map((index) => (
             <SwiperSlide key={index}>
               <NftItem>
-                <img src={`ALC-WEBTEST/images/NFT/Epic${index + 1}.gif`} alt='' />
+                <img src={`images/NFT/Epic${index + 1}.gif`} alt='' />
               </NftItem>
             </SwiperSlide>
           ))
@@ -70,7 +70,7 @@ export const Nfts = (props) => {
           [...Array(10).keys()].map((index) => (
             <SwiperSlide key={index}>
               <NftItem>
-                <img src={`ALC-WEBTEST/images/NFT/Rare${index + 1}.gif`} alt='' />
+                <img src={`images/NFT/Rare${index + 1}.gif`} alt='' />
               </NftItem>
             </SwiperSlide>
           ))
