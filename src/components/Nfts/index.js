@@ -43,7 +43,7 @@ export const Nfts = (props) => {
           [...Array(10).keys()].map((index) => (
             <SwiperSlide key={index}>
               <NftItem>
-                <img src={`images/NFT/Neap${index + 1}.gif`} alt='' />
+                <img src={`ALC-WEBTEST/images/NFT/Neap${index + 1}.gif`} alt='' />
               </NftItem>
             </SwiperSlide>
           ))
