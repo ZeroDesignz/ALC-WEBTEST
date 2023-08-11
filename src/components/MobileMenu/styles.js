@@ -66,7 +66,7 @@ export const MenuLink = styled.a`
   appearance: none;
   border: none;
   padding: 3vw;
-  margin: 3vw 0;
+  margin: 2vw 0;
   text-align: inherit;
   display: block;
   width: 100%;
