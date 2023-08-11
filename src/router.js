@@ -7,8 +7,8 @@ import { App } from './app'
 
 export const Router = () => {
   return (
-    <BrowserRouter>
-      <App />
+    <BrowserRouter basename={window.location.pathname || ''}>
+      <App exact path="/"/>
     </BrowserRouter>
   )
 }
