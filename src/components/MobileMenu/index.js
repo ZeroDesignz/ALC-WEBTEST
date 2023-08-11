@@ -32,7 +32,7 @@ export const MobileMenu = (props) => {
   };
 
   const handleMenuClick = () => {
-    if (width > 1200) return;
+    if (width > 1201) return;
     setIsMenu(!isMenu);
   };
 
@@ -44,7 +44,7 @@ export const MobileMenu = (props) => {
 
   return (
     <MenuWrapper>
-      {width < 1200 && (
+      {width < 1201 && (
         <MobileMenus
           src={theme.icons.menuWhite}
           alt=""
@@ -54,7 +54,7 @@ export const MobileMenu = (props) => {
       )}
       <SidebarContent
         id="sidebar_menu"
-        style={{ width: isMenu && width < 1200 ? "150px" : "0px" }}
+        style={{ width: isMenu && width < 1201 ? "50vw" : "0px" }}
       >
         <LinkWrapper>
           {menuList &&

@@ -61,7 +61,7 @@ export const MobileSideBar = (props) => {
       )}
       <SidebarContent
         id="sidebar_menu"
-        style={{ width: isMenu && width < 1200 ? "150px" : "0px" }}
+        style={{ width: isMenu && width < 1200 ? "20vw" : "0px" }}
       >
         <LinkWrapper>
           {sidebarLinks &&

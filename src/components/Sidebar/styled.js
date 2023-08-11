@@ -16,7 +16,7 @@ export const MenuList = styled.div`
   ${({ active }) =>
     active &&
     css`
-      background-color: rgba(44, 72, 144, 0.5);
+      // background-color: rgba(44, 72, 144, 0.5);
       /* background-color:  #2C4890; */
     `}
 `;

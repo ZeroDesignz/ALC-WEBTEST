@@ -40,6 +40,7 @@ export const SidebarContent = styled.div`
   transition: 0.34s;
   left: 0;
   background-color: #0184ec70;
+
   @media (min-width:768px){
     top:85px;
   }

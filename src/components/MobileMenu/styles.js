@@ -34,23 +34,27 @@ export const SidebarContent = styled.div`
   height: 100%;
   position: fixed;
   z-index: 5;
-  top: 60px;
+  top: 12.5vw;
   background-color: ${({ isHome, theme }) => isHome ? '#333' : `${theme.colors.backgroundPage}`};
   overflow-x: hidden;
   transition: 0.34s;
-  left: 0;
+  // left: 0;
   background-color: #0184ec70;
-  @media (min-width:768px){
-    top:85px;
+
+  @media (min-width:1201px) {
+    top: 12.5vw;
   }
-  @media (min-width:1065px){
-    top:95px;
+  @media (max-width: 561px) {
+    top: 70px;
   }
+
+ 
+  
 `
 export const LinkWrapper = styled.div`
   box-sizing: border-box;
   position: relative;
-  padding: 15px 20px;
+  padding: 10vw 2vw;
   z-index: 2;
 `
 
@@ -61,8 +65,8 @@ export const MenuLink = styled.a`
   text-decoration: none;
   appearance: none;
   border: none;
-  padding: 10px;
-  margin: 0px;
+  padding: 3vw;
+  margin: 3vw 0;
   text-align: inherit;
   display: block;
   width: 100%;
@@ -86,7 +90,7 @@ export const MenuLink = styled.a`
 `
 
 export const TextInfo = styled.span`
-  font-size: 18px;
+  font-size: calc(12px + 1.5vw);
   font-weight: 500;
   line-height: 24px;
   letter-spacing: -0.04ch;
@@ -111,14 +115,14 @@ export const TextInfo = styled.span`
 export const SideBarOverStyled = styled.div`
   display: flex;
   width: 100%;
-  height: 280px;
+  height: 100%;
   position: absolute;
   top: 0;
 
   ${({ bgOver }) => bgOver && css`
     background-repeat: no-repeat, repeat;
     background-position: center center;
-    background-size: 80% 95%;
+    background-size: 90% 105%;
     opacity: 0.1;
   `}
 `

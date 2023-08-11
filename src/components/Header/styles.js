@@ -3,11 +3,10 @@ import styled, { css } from "styled-components";
 export const HeaderWrapper = styled.div`
   position: fixed;
   width: 100%;
-  height: 7.9vw;
+  height: 12.5vw;
   text-align: center;
   z-index: 300;
-
-  /* max-height: 7vw; */
+  min-height: 70px;
 
   background: radial-gradient(
     35.7% 300% at 50.03% 52.25%,
@@ -23,7 +22,8 @@ export const HeaderWrapper = styled.div`
   //   background-filter: hue-rotate(150deg);
   // }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 1201px) {
+    height: 10vw;
     filter: none;
     background: linear-gradient(
       90deg,
@@ -46,7 +46,7 @@ export const Container = styled.div`
   width: 100%;
   /* height: 100vw; */
   /* padding: 20px 0px; */
-  /* max-height: 130px; */
+  min-height: 70px; 
 
   /* @media (min-width: 768px) {
       padding-top: 6px;
@@ -65,7 +65,7 @@ export const HeaderContent = styled.div`
   /* max-width: 1745px; */
   z-index: 102;
   /* margin: 0 auto; */
-  // min-height: 80px;
+  min-height: 80px;
 `;
 
 export const NavWrapper = styled.div`
@@ -82,7 +82,7 @@ export const Logo = styled.div`
   display: absolute;
   /* width: 100%; */
   margin: 0vw 3vw 0.5vw 8vw;
-  width: 11%;
+  width: 12%;
 
   img {
     display: flex; 
@@ -104,7 +104,7 @@ export const Logo = styled.div`
   @media (max-width: 1200px) {
     /* font-size: 1rem; */
     padding: 0.25vw;
-    margin: 1vw;
+    margin: 0.5vw 3vw 0.5vw 8vw;
     position: relative;
   }
 `;
@@ -139,13 +139,13 @@ export const TitleImg = styled.div`
   height: 100%;
   cursor: pointer;
   margin: 0% 1% 0 3%;
-  padding: 5px 80px 11px;
+  padding: 1vw 2vw ;
 
   span {
     display: block ruby;
     z-index: 2;
     color: #fff;
-    font-size: 1.5vw;
+    font-size:calc(12px + 1vw);
     font-weight: bold;
   }
 
@@ -254,6 +254,13 @@ export const BlockTimes = styled.div`
   margin-left: 0.5vw;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 1200px) {
+    margin-right: 3vw ;
+    padding: 2vw 0;
+    max-height: 10vw;
+    margin-top: 1vw;
+  }
 `;
 
 export const BlockText = styled.div`
