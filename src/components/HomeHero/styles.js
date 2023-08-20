@@ -5,7 +5,7 @@ export const Container = styled.div`
   /* align-items: baseline; */
   width: 100%;
   height: 82vh;
-  max-height: 700px;
+  // max-height: 700px;
   /* max-height:1024px; */
   position: relative;
  
@@ -14,13 +14,14 @@ export const Container = styled.div`
 export const ContentWrapper = styled.div`
 position: absolute;
 width: 100%;
-height: 100vh;
+
 bottom: 0;
 top: -6vw;
 display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
+overflow-x: hidden;
 
 
 
