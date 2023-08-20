@@ -4,8 +4,7 @@ import { useTheme } from "../../contexts/ThemeContext/index";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { Navbar } from "../Navbar";
 import { MobileMenu } from "../MobileMenu";
-import { loadStdlib } from "@reach-sh/stdlib";
-import MyAlgoConnect from "@reach-sh/stdlib/ALGO_MyAlgoConnect";
+
 import { useNavigate, useLocation } from "react-router-dom";
 import {
   HeaderWrapper,
@@ -24,19 +23,49 @@ import {
 } from "./styles";
 import { Balancebar } from "../Balancebar";
 import { MobileSideBar } from "../MobileSideBar";
-import WalletConnect from "@walletconnect/client";
 import QRCodeModal from "@walletconnect/qrcode-modal";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
+
 import Divider from "@mui/material/Divider";
+
+import { loadStdlib } from "@reach-sh/stdlib";
+import {PeraWalletConnect} from "@perawallet/connect"
+import { ALGO_MakePeraConnect as MakePeraConnect } from '@reach-sh/stdlib';
+import WalletConnect from "@walletconnect/client";
+import UniversalProvider from "@walletconnect/universal-provider";
 const reach = loadStdlib("ALGO");
 
 reach.setWalletFallback(
   reach.walletFallback({
     providerEnv: "MainNet",
-    MyAlgoConnect,
+    WalletConnect: MakePeraConnect(PeraWalletConnect)
   })
 );
+
+//  Initialize the provider
+const provider = await UniversalProvider.init({
+  logger: "info",
+  relayUrl: "wss://relay.walletconnect.com",
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  metadata: {
+    name: "React App",
+    description: "React App for WalletConnect",
+    url: "https://walletconnect.com/",
+    icons: ["https://avatars.githubusercontent.com/u/37784886"],
+  },
+  client: undefined, // optional instance of @walletconnect/sign-client
+});
+
+
+// Connect for walletConnect 
+const connector = new WalletConnect({
+  bridge: "https://bridge.walletconnect.org", // Required
+
+  // wss:"relay.walletconnect.com",
+  // qrcodeModal: QRCodeModal,
+
+});
 
 export const Header = () => {
   const [theme, { update }] = useTheme();
@@ -53,24 +82,24 @@ export const Header = () => {
   ];
 
   const [open, setOpen] = useState(false);
+
+  // Handle opening the wallet modal
   const handleOpen = () => {
     if (theme.walletType === null) {
       setOpen(true);
     } else if (theme.walletType === "algorand") {
       connectMyAlgoWallet();
-    } else if (theme.walletType === "pera") {
-      connectWallet();
     }
+    //  else if (theme.walletType === "pera") {
+    //   connectWallet();
+    // } 
   };
+
+  // Handle closing the wallet modal
   const handleClose = () => setOpen(false);
 
-  const connector = new WalletConnect({
-    bridge: "https://bridge.walletconnect.org", // Required
-    qrcodeModal: QRCodeModal,
-  });
-
-  // Create a function to connect
-  let connectWallet = () => {
+  // Create a function to connect the WalletConnect
+  const connectWallet = () => {
     handleClose();
     if (!connector.connected) {
       connector.createSession();
@@ -89,12 +118,12 @@ export const Header = () => {
         throw error;
       }
 
-      // Get provided accounts
+     // Get provided accounts
       const { accounts } = payload.params[0];
       window.localStorage.setItem("leaguesaddress", JSON.stringify(accounts));
       window.localStorage.setItem("walletType", "pera");
       theme.walletAddress = accounts;
-      theme.walletType = "pera";
+      theme.walletType = "algorand";
       update(theme);
       Navigate(location.pathname);
     });
@@ -104,7 +133,7 @@ export const Header = () => {
         throw error;
       }
 
-      // Get updated accounts
+     // Get updated accounts
       const { accounts } = payload.params[0];
       window.localStorage.setItem("leaguesaddress", JSON.stringify(accounts));
       window.localStorage.setItem("walletType", "pera");
@@ -225,8 +254,6 @@ export const Header = () => {
 
           </NavWrapper>
 
-
-
           {/* {location.pathname === "/blockwars" && <BoostBtn>BOOST</BoostBtn>} */}
 
           {theme.walletAddress && <BoostBtn>BOOST</BoostBtn>}
@@ -255,11 +282,15 @@ export const Header = () => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+
           <WalletBtn onClick={() => connectMyAlgoWallet()}>
-            <img src={theme.images.myalgoLogo} alt="myalgo-logo" />
-            <span>My algo wallet</span>
+            <img src={theme.icons.buttonPeraConnect} alt="pera-connect-logo"/>
+            {/* <img src={theme.images.myalgoLogo} alt="myalgo-logo" /> */}
+            <span>Pera wallet</span>
           </WalletBtn>
-          <Divider />
+
+          {/* <Divider />
+
           <WalletBtn onClick={() => connectWallet()}>
             <img
               src={theme.images.walletConnectLogo}
@@ -267,6 +298,9 @@ export const Header = () => {
             />
             <span>Pera wallet</span>
           </WalletBtn>
+
+          <Divider /> */}
+
           {connector.connected && (
             <QRCodeModal
               connector={connector}

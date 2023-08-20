@@ -3,6 +3,7 @@ import { algoIndexer } from "../../utils/algo";
 import { useTheme } from "styled-components";
 import _ from "lodash";
 import { BalanceWrapper, Container } from "./styled";
+import WalletConnect from "@walletconnect/client";
 
 export const Balancebar = (props) => {
   const theme = useTheme();
@@ -37,7 +38,9 @@ export const Balancebar = (props) => {
     getBalance();
   }, []);
 
+  console.log('asset-id');
   return (
+    
     <Container>
       <BalanceWrapper>
         <span>ALGO - {algoAmount}</span>

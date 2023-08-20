@@ -75,6 +75,8 @@ import instagramWhite from "./assets/icons/instagram-white.svg";
 import instagramBlue from "./assets/icons/instagram-blue.svg";
 import facebookWhite from "./assets/icons/facebook-white.svg";
 import facebookBlue from "./assets/icons/facebook-blue.svg";
+
+import buttonPeraConnect from "./assets/icons/button-pera-connect.svg"
 import nftExplorer from "./assets/icons/nftExplorer.png";
 import nftCard from "./assets/images/nftCard.png";
 import storyCard from "./assets/images/storyCard.png";
@@ -91,17 +93,19 @@ import neapBackground from "./assets/images/neapolitan-background.png";
 import legendBackground from "./assets/images/legend-background.png";
 import epicBackground from "./assets/images/epic-background.png";
 import rareBackground from "./assets/images/rare-background.png";
-import myalgoLogo from './assets/images/myalgo-logo.png';
+import myalgoLogo from "./assets/images/myalgo-logo.png";
 import walletConnectLogo from './assets/images/wallet-connect-logo.png';
 import securityVideo from "./assets/videos/Security_Catalyst.mp4";
 import decentralizationVideo from "./assets/videos/Decentralization_Catalyst.mp4";
 import scalabilityVideo from "./assets/videos/Scalabilty_Catalyst.mp4";
 import alhomeVideo from "./assets/videos/algoanimate.mp4";
+import peraWalletConnet from './assets/images/pera-wallet-logo.png';
 /**
  * Theme images
  */
 theme.images = {
   myalgoLogo,
+  peraWalletConnet,
   walletConnectLogo,
   headerOver,
   headerLogo,
@@ -194,6 +198,7 @@ theme.icons = {
   facebookWhite,
   facebookBlue,
   nftExplorer,
+  buttonPeraConnect,
 };
 
 theme.videos = {

@@ -8,7 +8,7 @@ import { Team } from '../Team'
 import { Partners } from "../Partners";
 import NewTabs from "../NewTabs"
 
-import { Container, HomeContent, Content, } from "./styles";
+import { Container, HomeContent, Content, StillBkg, } from "./styles";
 import { JoinTeam } from "../JoinTeam";
 import { WelcomeLeague } from "../WelcomeLeague";
 import { HowTo } from "../HowTo";
@@ -22,9 +22,10 @@ export const Home = (props) => {
 
   return (
     <Container>
-      <HomeHero />
+      <StillBkg src={theme.videos.alhomeVideo} autoPlay loop muted/>
       <HomeContent id="homeContent">
         <Content>
+        <HomeHero />
         <WelcomeLeague />
         <Nfts/>
         <Mission />
