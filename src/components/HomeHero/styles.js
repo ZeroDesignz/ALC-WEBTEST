@@ -58,7 +58,7 @@ overflow-x: hidden;
   strong.line2 {
     font-weight: 400;
     font-size: 3vw;
-    color: #ff8100;
+    color: #b79018;
     text-align: center; /* Add this property to center-align the text */
     
   }
