@@ -17,6 +17,7 @@ import Disclaimer from "../InfoTabs";
 import DisclaimerA from "../DisclaimerA";
 import { Nftz } from "../Nftz";
 
+
 export const Home = (props) => {
   const theme = useTheme();
 
@@ -31,7 +32,6 @@ export const Home = (props) => {
         <Mission />
         <NewTabs/>
         <Vision />
-       
         {/* <DisclaimerA /> */}
         <StoryLine />
         

@@ -38,15 +38,15 @@ export const SidebarContent = styled.div`
   background-color: ${({ isHome, theme }) => isHome ? '#333' : `${theme.colors.backgroundPage}`};
   overflow-x: hidden;
   transition: 0.34s;
-  left: 0;
+  right: 0;
   background-color: #0184ec70;
 
-  @media (min-width:768px){
-    top:85px;
-  }
-  @media (min-width:1065px){
-    top:95px;
-  }
+  // @media (min-width:768px){
+  //   top:12vw;
+  // }
+  // @media (min-width:1065px){
+  //   top:11.5vw;
+  // }
 `
 export const LinkWrapper = styled.div`
   box-sizing: border-box;

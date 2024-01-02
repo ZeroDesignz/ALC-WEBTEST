@@ -30,42 +30,49 @@ import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 
 import { loadStdlib } from "@reach-sh/stdlib";
-import {PeraWalletConnect} from "@perawallet/connect"
-import { ALGO_MakePeraConnect as MakePeraConnect } from '@reach-sh/stdlib';
+import { PeraWalletConnect } from "@perawallet/connect";
+import { ALGO_MakePeraConnect as MakePeraConnect } from "@reach-sh/stdlib";
+// import { ALGO_MakeWalletConnect as MakeWalletConnect } from "@reach-sh/stdlib"
 import WalletConnect from "@walletconnect/client";
 import UniversalProvider from "@walletconnect/universal-provider";
+
+
+
 const reach = loadStdlib("ALGO");
 
 reach.setWalletFallback(
   reach.walletFallback({
     providerEnv: "MainNet",
-    WalletConnect: MakePeraConnect(PeraWalletConnect)
+    WalletConnect: MakePeraConnect(PeraWalletConnect),
   })
 );
 
 //  Initialize the provider
-const provider = await UniversalProvider.init({
-  logger: "info",
-  relayUrl: "wss://relay.walletconnect.com",
-  projectId: process.env.REACT_APP_PROJECT_ID,
-  metadata: {
-    name: "React App",
-    description: "React App for WalletConnect",
-    url: "https://walletconnect.com/",
-    icons: ["https://avatars.githubusercontent.com/u/37784886"],
-  },
-  client: undefined, // optional instance of @walletconnect/sign-client
-});
+// const provider = await UniversalProvider.init({
+//   logger: "info",
+//   relayUrl: "wss://relay.walletconnect.com",
+//   projectId: process.env.REACT_APP_PROJECT_ID,
+//   metadata: {
+//     name: "React App",
+//     description: "React App for WalletConnect",
+//     url: "https://walletconnect.com/",
+//     icons: ["https://avatars.githubusercontent.com/u/37784886"],
+//   },
+//   client: undefined, // optional instance of @walletconnect/sign-client
+// });
+
+// await provider.connect;
 
 
-// Connect for walletConnect 
+// Connect for walletConnect
 const connector = new WalletConnect({
   bridge: "https://bridge.walletconnect.org", // Required
 
   // wss:"relay.walletconnect.com",
-  // qrcodeModal: QRCodeModal,
-
+  qrcodeModal: QRCodeModal,
 });
+
+
 
 export const Header = () => {
   const [theme, { update }] = useTheme();
@@ -81,6 +88,10 @@ export const Header = () => {
     { key: "about", name: "ABOUT" },
   ];
 
+  
+  const active = reach.minimumBalanceOf( account.current );
+
+
   const [open, setOpen] = useState(false);
 
   // Handle opening the wallet modal
@@ -92,7 +103,7 @@ export const Header = () => {
     }
     //  else if (theme.walletType === "pera") {
     //   connectWallet();
-    // } 
+    // }
   };
 
   // Handle closing the wallet modal
@@ -104,7 +115,7 @@ export const Header = () => {
     if (!connector.connected) {
       connector.createSession();
     } else {
-      connector.killSession()
+      connector.killSession();
       window.localStorage.removeItem("leaguesaddress");
       window.localStorage.removeItem("walletType");
       theme.walletAddress = null;
@@ -118,7 +129,7 @@ export const Header = () => {
         throw error;
       }
 
-     // Get provided accounts
+      // Get provided accounts
       const { accounts } = payload.params[0];
       window.localStorage.setItem("leaguesaddress", JSON.stringify(accounts));
       window.localStorage.setItem("walletType", "pera");
@@ -133,7 +144,7 @@ export const Header = () => {
         throw error;
       }
 
-     // Get updated accounts
+      // Get updated accounts
       const { accounts } = payload.params[0];
       window.localStorage.setItem("leaguesaddress", JSON.stringify(accounts));
       window.localStorage.setItem("walletType", "pera");
@@ -188,10 +199,13 @@ export const Header = () => {
       theme.walletType = "algorand";
       update(theme);
       Navigate(location.pathname);
+
     } catch (err) {
       console.log(err);
     }
   };
+  
+  // console.log("test " + theme.walletAddress);
 
   useEffect(() => {
     if (location.pathname === "/") {
@@ -199,7 +213,7 @@ export const Header = () => {
     }
   }, []);
 
-  useEffect(() => { }, [theme.walletAddress]);
+  useEffect(() => {}, [theme.walletAddress]);
 
   const truncate = (_str, n) => {
     let str = _str.toString();
@@ -222,6 +236,9 @@ export const Header = () => {
     border: "none",
     borderRadius: "1rem",
   };
+
+  
+  // console.log("main " + theme.walletAddress);
 
   return (
     <HeaderWrapper>
@@ -246,12 +263,11 @@ export const Header = () => {
 
               {/* )} */}
             </BlockTimes>
-        
+
             <BlockText>
               <div>NEXT BOOST -- 07:45 pm</div>
               <div>NEXT BLOCKWARS IN -- 04:30 HRs</div>
             </BlockText>
-
           </NavWrapper>
 
           {/* {location.pathname === "/blockwars" && <BoostBtn>BOOST</BoostBtn>} */}
@@ -265,14 +281,13 @@ export const Header = () => {
               <MobileSideBar />
             )}
           </MobileMenuWrapper>
-
         </HeaderContent>
         {width > 767 &&
-              (theme.walletAddress === null ? (
-                <Navbar menuList={menuList} />
-              ) : (
-                <Balancebar accountAddress={theme.walletAddress} />
-              ))}
+          (theme.walletAddress === null ? (
+            <Navbar menuList={menuList} />
+          ) : (
+            <Balancebar accountAddress={theme.walletAddress} />
+          ))}
         {width > 767 && <BackOver bgOver={theme.images.headerOver} />}
       </Container>
       <Modal
@@ -282,9 +297,8 @@ export const Header = () => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-
           <WalletBtn onClick={() => connectMyAlgoWallet()}>
-            <img src={theme.icons.buttonPeraConnect} alt="pera-connect-logo"/>
+            <img src={theme.icons.buttonPeraConnect} alt="pera-connect-logo" />
             {/* <img src={theme.images.myalgoLogo} alt="myalgo-logo" /> */}
             <span>Pera wallet</span>
           </WalletBtn>
@@ -301,7 +315,9 @@ export const Header = () => {
 
           <Divider /> */}
 
-          {connector.connected && (
+          {connector.connected 
+          && 
+          (
             <QRCodeModal
               connector={connector}
               onClose={() => {
@@ -309,7 +325,8 @@ export const Header = () => {
                 handleClose();
               }}
             />
-          )}
+          )
+          }
         </Box>
       </Modal>
     </HeaderWrapper>

@@ -199,20 +199,20 @@ export const Content = styled.div`
   }
 `;
 
-/* export const Blog = styled.div`
+ export const Blog = styled.div`
 
   width: 100%;
   hegiht: 100%;
   display: flex;
   size: ;
 
-`; */
+`; 
 
 
 export const BlogTexts = styled.div`
-  width: 49%;
-  font-size: 5vw;
-  line-height: 1.5vw;
+  width: 50%;
+  
+  line-height: 4.7vmin;
   margin-bottom: 2.5vw;
   letter-spacing: -0.025vw;
   margin: 0;
@@ -224,7 +224,7 @@ export const BlogTexts = styled.div`
   justify-content: center;
   align-items: center;
   max-height: 37vw;
-  padding:  2vw  1vw;
+  padding:  0vw  4vmin;
   overflow: hidden;
   justify-content: stretch;
   
@@ -245,7 +245,7 @@ export const BlogTexts = styled.div`
 
 
   p {
-    font-size: 2.25vw;
+    font-size: 3vmin;
     /* font-family: "Happy Monkey",cursive; */
     line-height: 3.5vw;
     word-spacing: -0.09vw;
@@ -253,7 +253,7 @@ export const BlogTexts = styled.div`
     text-align: justify;
   }
   p + p {
-    text-indent: 2vw;
+    text-indent: 2vmin;
   }
 
   @media (min-width: 300px) {
@@ -306,7 +306,7 @@ export const BlogImage = styled.div`
   }
   position: left;
   // margin-top:10px ;
-  width: 100%;
+  width: 50%;
   height: 39vw;
   background-image: url(${(props) => props.bgImage});
   background-repeat: no-repeat;

@@ -11,7 +11,7 @@ export const Router = () => {
     basename={window.location.pathname || ''} 
     >
       <App 
-      exact path="/"
+      // exact path="/"
       />
     </BrowserRouter>
   )

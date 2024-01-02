@@ -25,11 +25,12 @@ export const BioSwiper = ({ data, sendActiveIndex }) => {
     await swiper.slideTo(index + 6);
   };
 
-  useEffect(async () => {
+  useEffect(() => {
+    async function fetchData() {
     if (location.pathname.split("/")[2]) {
       let id = location.pathname.split("/")[2];
       let item = theme.ASAInfos.find((e) => {
-        return e.id == id;
+        return e.id === id;
       });
       if (item) {
         sendActiveIndex(item.order);
@@ -38,13 +39,15 @@ export const BioSwiper = ({ data, sendActiveIndex }) => {
         }
       }
     }
-  }, [swiper]);
+  }
+  fetchData();
+  }, [location.pathname, sendActiveIndex, swiper, theme.ASAInfos]);
 
   return (
     <Container id="nets">
       <Swiper
         onSwiper={(s) => setSwiper(s)}
-        slidesPerView={6}
+        slidesPerView={5}
         spaceBetween={10}
         navigation={width > 767 ? true : false}
         loop={true}

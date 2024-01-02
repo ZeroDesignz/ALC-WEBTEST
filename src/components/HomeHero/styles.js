@@ -9,7 +9,7 @@ export const Container = styled.div`
   /* max-height:1024px; */
   position: relative;
  
-`;
+`
 
 export const ContentWrapper = styled.div`
 position: absolute;

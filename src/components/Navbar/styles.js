@@ -9,7 +9,7 @@ export const Container = styled.div`
   z-index: 700;
   justify-content: space-around;
   position: fixed;
-  top: 5.4vw;
+  top: 6.25vw;
 
 
   @media (max-width:1200px){

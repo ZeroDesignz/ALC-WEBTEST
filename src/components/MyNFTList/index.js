@@ -58,15 +58,15 @@ export const MyNFTList = () => {
   return (
     <CardContainer>
       <h1>MY NFT'S</h1>
-      <Container style={{height:'100%'}}>
+      <Container style={{ height: "100%" }}>
         <Row>
           {ownedAssets.map((asset) => (
             <Col key={asset.id} style={{ textAlign: "center" }}>
-              <p>ASA ID | {asset.id}</p>
+              <p>{asset.name}</p>
               <Link to={`/nfts/${asset.id}`}>
                 <img src={asset.image} width="240" />
               </Link>
-              <p>{asset.name}</p>
+              <p>ASA ID | {asset.id}</p>
             </Col>
           ))}
         </Row>
@@ -75,7 +75,7 @@ export const MyNFTList = () => {
         color={"#ffffff"}
         loading={loading}
         css={override}
-        size={15}
+        size={50}
       />
     </CardContainer>
   );

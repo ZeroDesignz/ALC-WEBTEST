@@ -13,9 +13,9 @@ export const Sidebar = () => {
     };
   };
   const sidebarLinks = [
-    createData("/nfts", "BIO"),
+    createData("/nfts", "NFTSBIO"),
     createData("/story", "STORY"),
-    createData("/blockwars", "BLOCKWARS"),
+    // createData("/blockwars", "BLOCKWARS"),
     createData("/mynft", "MY NFTS"),
     createData("/upgrade", "UPGRADE"),
   ];
