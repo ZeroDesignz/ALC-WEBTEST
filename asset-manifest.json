@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ALC-WEBTEST/static/css/main.887a2808.css",
-    "main.js": "/ALC-WEBTEST/static/js/main.2238a9a6.js",
+    "main.js": "/ALC-WEBTEST/static/js/main.510c2a24.js",
     "static/media/block-card2.gif": "/ALC-WEBTEST/static/media/block-card2.77fe28ef4cedcf260d78.gif",
     "static/media/block-card.gif": "/ALC-WEBTEST/static/media/block-card.03f8fcd8d3bcbb0d3f50.gif",
     "static/media/Decentralization_Catalyst.mp4": "/ALC-WEBTEST/static/media/Decentralization_Catalyst.07b3399b3a4bf6bd1675.mp4",
@@ -87,10 +87,10 @@
     "index.html": "/ALC-WEBTEST/index.html",
     "static/media/facebook-white.svg": "/ALC-WEBTEST/static/media/facebook-white.03af38d5563269fadd42fc5490ab75fd.svg",
     "main.887a2808.css.map": "/ALC-WEBTEST/static/css/main.887a2808.css.map",
-    "main.2238a9a6.js.map": "/ALC-WEBTEST/static/js/main.2238a9a6.js.map"
+    "main.510c2a24.js.map": "/ALC-WEBTEST/static/js/main.510c2a24.js.map"
   },
   "entrypoints": [
     "static/css/main.887a2808.css",
-    "static/js/main.2238a9a6.js"
+    "static/js/main.510c2a24.js"
   ]
 }
